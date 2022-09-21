@@ -2,21 +2,21 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import CoachDetail from './pages/coaches/CouchDetail.vue'
 import CoachRegistration from './pages/coaches/CoachRegistration.vue'
-import CoachList from './pages/coaches/CoachList.vue'
+import CoachesList from './pages/coaches/CoachesList.vue'
 
-import ContactCoach from './pages/contact/ContactCoach.vue'
-import RequestReceived from './pages/contact/RequestReceived.vue'
+import ContactCoach from './pages/requests/ContactCoach.vue'
+import RequestReceived from './pages/requests/RequestReceived.vue'
 
-import NotFound from './pages/NotFound.vue.vue'
+import NotFound from './pages/NotFound.vue'
 
-export const router = createRouter({
-    history: createWebHistory,
+ const router = createRouter({
+    history: createWebHistory(),
     routes: [
         {
             path: '/', redirect: '/coaches'
         },
         {
-            path: '/coaches', component: CoachList
+            path: '/coaches', component: CoachesList
         },
         {
             path: '/coaches/:id', component: CoachDetail, children: [
@@ -37,3 +37,4 @@ export const router = createRouter({
         }
     ]
 })
+export default router
