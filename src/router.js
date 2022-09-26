@@ -19,7 +19,9 @@ import NotFound from './pages/NotFound.vue'
             path: '/coaches', component: CoachesList
         },
         {
-            path: '/coaches/:id', component: CoachDetail, children: [
+            path: '/coaches/:id', component: CoachDetail, 
+            props: true, // it sends :id as props to component
+            children: [
                 {   path: 'contact', component: ContactCoach    } // /coaches/c1/contact
             ]
         },
